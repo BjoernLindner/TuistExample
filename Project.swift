@@ -6,7 +6,6 @@ import ProjectDescriptionHelpers
 let project = Project(
     name: "TuistExample",
     options: .options(),
-    packages: [.remote(url: "https://github.com/hmlongco/Resolver", requirement: .upToNextMajor(from: "1.5.0"))],
     targets: [
         Target(
             name: "WatchApp",
@@ -25,8 +24,7 @@ let project = Project(
             bundleId: "com.tuistexample.watchkitapp.extension",
             infoPlist: .default,
             dependencies: [
-                .package(product: "Resolver")
-                //.external(name: "Resolver")
+                .external(name: "Resolver")
             ]
         ),
         Target(
@@ -37,8 +35,7 @@ let project = Project(
             infoPlist: .default,
             dependencies: [
                 .target(name: "WatchApp"),
-                .package(product: "Resolver")
-                //.external(name: "Resolver")
+                .external(name: "Resolver")
             ]
         )
     ],
